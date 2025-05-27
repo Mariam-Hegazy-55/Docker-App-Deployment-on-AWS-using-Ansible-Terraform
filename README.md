@@ -12,6 +12,7 @@ A complete IaC solution for deploying containerized applications on AWS using Te
 
 
 ## Architecture Overview
+``` mermaid
 graph TD
   subgraph Terraform Provisioning
     T[Terraform] -->|Generates SSH Key Pair| K[Local Private & Public Key]
@@ -28,7 +29,7 @@ graph TD
     A -->|Installs & Configures| DOCKER[Docker Engine on EC2]
     DOCKER -->|Builds & Runs| CONTAINER[Docker Container (My Web App)]
   end
-
+```
 ## Prerequisites
 
 Before getting started, ensure you have the following installed and configured:
