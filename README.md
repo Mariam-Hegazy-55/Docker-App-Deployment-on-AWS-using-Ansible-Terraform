@@ -10,9 +10,7 @@ A complete IaC solution for deploying containerized applications on AWS using Te
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Workflow](#workflow)
-- [Customization](#customization)
-- [Best Practices](#best-practices)
-- [License](#license)
+
 
 ## Architecture Overview
 
@@ -25,3 +23,30 @@ graph TD
     E -->|Deploys| F[Docker Containers]
     A -->|State Storage| G[S3 Bucket]
     B -->|Internet Access| H[Internet Gateway]
+
+## 📋 Prerequisites
+
+Before getting started, ensure you have the following installed and configured:
+
+- ✅ **AWS Account** with programmatic access
+- ✅ IAM permissions for:
+  - EC2
+  - VPC
+  - S3
+  - IAM
+- ✅ **Terraform** v1.0+
+- ✅ **Ansible** v2.10+
+- ✅ **AWS CLI** configured with credentials (`aws configure`)
+- ✅ **Docker** (for local testing and containerization)
+
+---
+
+## 🔧 Getting Started
+
+Follow these steps to deploy the infrastructure and configure your environment:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-repo/aws-terraform-ansible-docker.git
+cd aws-terraform-ansible-docker
