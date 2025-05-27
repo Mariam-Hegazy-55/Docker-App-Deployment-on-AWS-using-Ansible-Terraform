@@ -12,17 +12,22 @@ A complete IaC solution for deploying containerized applications on AWS using Te
 
 
 ## Architecture Overview
-
-```mermaid
 graph TD
-    A[Terraform] -->|Provisions| B[AWS VPC]
-    B --> C[Public Subnet]
-    C --> D[EC2 Instance]
-    D -->|Managed by| E[Ansible]
-    E -->|Deploys| F[Docker Containers]
-    A -->|State Storage| G[S3 Bucket]
-    B -->|Internet Access| H[Internet Gateway]
-```
+  subgraph Terraform Provisioning
+    T[Terraform] -->|Generates SSH Key Pair| K[Local Private & Public Key]
+    T -->|Creates| VPC[AWS VPC]
+    VPC --> PUB[Public Subnet]
+    PUB --> EC2[EC2 Instance]
+    T -->|Stores State| S3[S3 Bucket]
+    VPC --> IGW[Internet Gateway]
+  end
+
+  subgraph Configuration & Deployment
+    EC2 -->|SSH Access Using Key| A[Ansible Control]
+    A -->|Copies App Files| APP_DIR[App Directory on EC2]
+    A -->|Installs & Configures| DOCKER[Docker Engine on EC2]
+    DOCKER -->|Builds & Runs| CONTAINER[Docker Container (My Web App)]
+  end
 
 ## Prerequisites
 
