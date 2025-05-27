@@ -19,10 +19,12 @@ graph TD
     C --> D[📶 Public Subnet]
     D --> E[🖥️ EC2 Instance]
     E --> F[🐳 Docker Containers]
-    B --> G[🌉 Internet Gateway]
-    A --> H[🪣 S3 Bucket]
-    H --> I[📁 Terraform tfstate]
-    I --> J[⚡ Terraform Apply]
+    F -->|Managed by| G[🤖 Ansible Playbooks]
+    B --> H[🌉 Internet Gateway]
+    A --> I[🪣 S3 Bucket]
+    I --> J[📁 Terraform tfstate]
+    J --> K[⚡ Terraform Apply]
+    K -->|Triggers| G
 ```
 ## Prerequisites
 
