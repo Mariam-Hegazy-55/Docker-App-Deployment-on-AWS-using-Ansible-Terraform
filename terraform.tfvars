@@ -1,0 +1,7 @@
+region        = "eu-west-2"
+cidr          = "20.0.0.0/16"
+sub-cidr      = "20.0.0.0/24"
+sub-az        = "eu-west-2a"
+ami           = "ami-0a94c8e4ca2674d5a"
+instance_type = "t2.micro"
+key_path      = "./key/my-key.pem"

@@ -1,0 +1,86 @@
+---
+- name : web-app-play
+  hosts : all
+  remote_user: ubuntu 
+  become : true
+  tasks:
+  - name: Update APT packages
+    apt:
+      update_cache: yes
+  
+  - name: Ensure NGINX is installed
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+  - name: Create app directory     # to ensure that my-web-app Directory Exists before copying files
+    file:
+      path: /home/ubuntu/my-web-app
+      state: directory
+      mode: '0755'
+
+  - name :  copy Dockerfile
+    copy: 
+      src : Dockerfile
+      dest : /home/ubuntu/my-web-app/Dockerfile
+
+  - name : Copy index.html 
+    copy :
+      src : index.html
+      dest: /home/ubuntu/my-web-app/index.html
+
+  - name : Copy script.js
+    copy :
+      src : script.js
+      dest : /home/ubuntu/my-web-app/script.js
+
+  - name : Copy style.css
+    copy :
+      src : style.css
+      dest : /home/ubuntu/my-web-app/style.css
+  
+  - name: Update APT packages
+    apt:
+      update_cache: yes
+
+  - name: Download Docker install script
+    command: curl -fsSL https://get.docker.com -o get-docker.sh
+    args:
+      chdir: /home/ubuntu
+
+  - name: Run Docker install script
+    command: sh get-docker.sh
+    args:
+      chdir: /home/ubuntu
+
+
+  - name: Add user to Docker group
+    user:
+      name: ubuntu
+      groups: docker
+      append: yes
+
+  - name: Restart Docker
+    service:
+      name: docker
+      state: restarted
+
+  
+  - name: Build Docker Image
+    command: docker build -t mywebapp .
+    args:
+      chdir: /home/ubuntu/my-web-app/
+
+  - name: Run Docker container
+    docker_container:
+      name: mywebapp
+      image: mywebapp
+      state: started
+      ports:
+        - "4000:80"
+    
+    
+   
+
+
+    
+    
