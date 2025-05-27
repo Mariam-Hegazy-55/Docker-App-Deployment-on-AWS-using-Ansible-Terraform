@@ -10,7 +10,9 @@ A complete IaC solution for deploying containerized applications on AWS using Te
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Workflow](#workflow)
-
+- [Customization](#customization)
+- [Best Practices](#best-practices)
+- [License](#license)
 
 ## Architecture Overview
 
@@ -23,6 +25,7 @@ graph TD
     E -->|Deploys| F[Docker Containers]
     A -->|State Storage| G[S3 Bucket]
     B -->|Internet Access| H[Internet Gateway]
+```
 
 ## 📋 Prerequisites
 
