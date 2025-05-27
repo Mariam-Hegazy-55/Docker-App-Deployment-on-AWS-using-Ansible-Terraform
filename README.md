@@ -8,7 +8,7 @@ A complete IaC solution for deploying containerized applications on AWS using Te
 ## Table of Contents
 - [Architecture Overview](#architecture-overview)
 - [Prerequisites](#prerequisites)
-- [Workflow](#workflow)
+- [Workflow Overview](#WorkflowOverview)
 
 
 ## Architecture Overview
