@@ -8,11 +8,8 @@ A complete IaC solution for deploying containerized applications on AWS using Te
 ## Table of Contents
 - [Architecture Overview](#architecture-overview)
 - [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
 - [Workflow](#workflow)
-- [Customization](#customization)
-- [Best Practices](#best-practices)
-- [License](#license)
+
 
 ## Architecture Overview
 
@@ -36,20 +33,29 @@ Before getting started, ensure you have the following installed and configured:
   - EC2
   - VPC
   - S3
-  - IAM
 - ✅ **Terraform** v1.0+
 - ✅ **Ansible** v2.10+
 - ✅ **AWS CLI** configured with credentials (`aws configure`)
 - ✅ **Docker** (for local testing and containerization)
 
----
+## 🔄 Workflow Overview
+**1. Infrastructure Provisioning (Terraform)**
+Creates VPC, subnets, EC2 instances, and an S3 bucket
 
-## 🔧 Getting Started
+Configures security groups for SSH and HTTP access
 
-Follow these steps to deploy the infrastructure and configure your environment:
+**2. Configuration Management (Ansible)**
+Connects to EC2 instances using SSH
 
-### 1. Clone the Repository
+Installs Docker and required dependencies
 
-```bash
-git clone https://github.com/your-repo/aws-terraform-ansible-docker.git
-cd aws-terraform-ansible-docker
+Deploys containers with specified port mappings
+
+**3. Application Deployment (Docker)**
+Launches containers with health checks
+
+Exposes services on configured ports
+
+Optionally sets up logging and monitoring
+
+
