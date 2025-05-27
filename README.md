@@ -24,7 +24,6 @@ graph TD
     A --> I[🪣 S3 Bucket]
     I --> J[📁 Terraform tfstate]
     J --> K[⚡ Terraform Apply]
-    K -->|Triggers| G
 ```
 ## Prerequisites
 
