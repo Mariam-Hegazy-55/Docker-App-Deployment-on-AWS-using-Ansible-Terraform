@@ -24,7 +24,7 @@ graph TD
     B -->|Internet Access| H[Internet Gateway]
 ```
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before getting started, ensure you have the following installed and configured:
 
@@ -38,7 +38,7 @@ Before getting started, ensure you have the following installed and configured:
 - ✅ **AWS CLI** configured with credentials (`aws configure`)
 - ✅ **Docker** (for local testing and containerization)
 
-## 🔄 Workflow Overview
+## Workflow Overview
 **1. Infrastructure Provisioning (Terraform)**
 Creates VPC, subnets, EC2 instances, and an S3 bucket
 
