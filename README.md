@@ -123,11 +123,11 @@ Optionally sets up logging and monitoring
 After successful deployment:
 
 - 🌍 **Web Access:**  
-  Access the web application using the **DNS name of the Application Load Balancer (ALB)** provided in the Terraform output.
+  Access the web application using the public IP address of the EC2 instance provided in the Terraform output
 
 
 Example:
 ```bash
-curl http://<alb_dns_name>
+curl http://<ec2_public_ip>
 ```
 
