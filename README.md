@@ -4,16 +4,16 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 A complete IaC solution for deploying containerized applications on AWS using Terraform for provisioning, Docker for containerization, and Ansible for configuration management.
-
+---
 ## Table of Contents
 
-1. [📌 Architecture Overview](#-architecture-overview)
-2. [🚀 Features](#-features)
+1. [📌 Architecture Overview](#-Architecture-Overview)
+2. [🚀 Features](#-Featuress)
 3. [🛠️ Tools & Technologies](#️-tools--technologies)
 4. [📦 Terraform Modules](#-terraform-modules)
 5. [📂 Folder Structure](#-folder-structure)
 
-
+---
 ## Architecture Overview
 ``` mermaid
 graph TD
@@ -28,6 +28,17 @@ graph TD
     I --> J[📁 Terraform tfstate]
     J --> K[⚡ Terraform Apply]
 ```
+---
+
+## 🚀 Features
+
+- ✅ Automated infrastructure provisioning with Terraform
+- ✅ Configuration management using Ansible
+- ✅ Containerized application deployment with Docker
+- ✅ Remote state management via S3
+- ✅ Modular and scalable design
+
+---
 ## Prerequisites
 
 Before getting started, ensure you have the following installed and configured:
