@@ -7,11 +7,11 @@ A complete IaC solution for deploying containerized applications on AWS using Te
 ---
 ## Table of Contents
 
-1. [📌 Architecture Overview](#-Architecture-Overview)
-2. [🚀 Features](#-Featuress)
-3. [🛠️ Tools & Technologies](#️-tools--technologies)
-4. [📦 Terraform Modules](#-terraform-modules)
-5. [📂 Folder Structure](#-folder-structure)
+1. [Architecture Overview](#-Architecture-Overview)
+2. [Features](#-Featuress)
+3. [Tools & Technologies](#️-tools--technologies)
+4. [Terraform Modules](#-terraform-modules)
+5. [Folder Structure](#-folder-structure)
 
 ---
 ## Architecture Overview
