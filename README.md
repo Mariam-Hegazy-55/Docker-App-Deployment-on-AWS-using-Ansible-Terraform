@@ -6,9 +6,12 @@
 A complete IaC solution for deploying containerized applications on AWS using Terraform for provisioning, Docker for containerization, and Ansible for configuration management.
 
 ## Table of Contents
-- [Architecture Overview](#architecture-overview)
-- [Prerequisites](#prerequisites)
-- [Workflow Overview](#Workflow-Overview)
+
+1. [📌 Architecture Overview](#-architecture-overview)
+2. [🚀 Features](#-features)
+3. [🛠️ Tools & Technologies](#️-tools--technologies)
+4. [📦 Terraform Modules](#-terraform-modules)
+5. [📂 Folder Structure](#-folder-structure)
 
 
 ## Architecture Overview
