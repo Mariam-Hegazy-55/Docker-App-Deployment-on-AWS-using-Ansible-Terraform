@@ -96,7 +96,7 @@ Before getting started, ensure you have the following installed and configured:
 - ✅ **Ansible** v2.10+
 - ✅ **AWS CLI** configured with credentials (`aws configure`)
 - ✅ **Docker** (for local testing and containerization)
-
+---
 ## Workflow Overview
 **1. Infrastructure Provisioning (Terraform)**
 Creates VPC, subnets, EC2 instances, and an S3 bucket
@@ -117,4 +117,17 @@ Exposes services on configured ports
 
 Optionally sets up logging and monitoring
 
+---
+## 🌐 Accessing the Application
+
+After successful deployment:
+
+- 🌍 **Web Access:**  
+  Access the web application using the **DNS name of the Application Load Balancer (ALB)** provided in the Terraform output.
+
+
+Example:
+```bash
+curl http://<alb_dns_name>
+```
 
