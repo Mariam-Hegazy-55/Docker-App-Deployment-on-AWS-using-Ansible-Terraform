@@ -142,7 +142,7 @@ Optionally sets up logging and monitoring
 After successful deployment:
 
 - 🌍 **Web Access:**  
-  Access the web application using the public IP address of the EC2 instance provided in the Terraform output
+  Access the web application using the public IP address of the EC2 instance
 
 
 Example:
