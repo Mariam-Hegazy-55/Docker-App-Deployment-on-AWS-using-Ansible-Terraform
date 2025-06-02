@@ -68,19 +68,38 @@ Each module is isolated and parameterized to ensure flexibility, scalability, an
 ## 📂 Folder Structure
 
 ```bash
-Docker-App-Deployment-on-AWS-using-Ansible-Terraform/
-├── ec2/                         # EC2 module
-├── key/                         # SSH key pair
-├── my-web/                      # Application files
-├── vpc/                         # VPC module
-├── backend.tf                   # S3 state configuration
-├── inventory.ini                # Ansible inventory
-├── main.tf                      # Core resources
-├── playbook.yaml                # Ansible playbook
-├── providers.tf                 # AWS provider configuration
-├── terraform.tfvars             # Environment variables
-├── variable.tf                  # Global variables
-└── README.md                    # Project documentation
+INFRASTRUCTURE/
+├── .terraform/                # Terraform cache directory
+│
+├── ec2/                       # EC2 instance module
+│   ├── main.tf                # Instance configuration
+│   ├── output.tf              # Output variables
+│   └── variables.tf           # Input variables
+│
+├── key/                       # SSH key management
+│   ├── key.tf                 # Key pair resource
+│   |── my-key.pem             # Private key file
+|   └── output.tf
+│
+├── my-web/                    # Web application
+│   ├── Dockerfile             # Container configuration
+│   ├── index.html             # HTML content
+│   ├── script.js              # JavaScript code
+│   └── style.css              # CSS styles
+│
+├── vpc/                       # Networking module
+│   ├── main.tf                # VPC resources
+│   ├── output.tf              # Network outputs
+│   └── variables.tf           # Network variables
+│
+├── .terraform.lock.hcl        # Provider versions lock
+├── backend.tf                 # State backend config
+├── inventory.ini              # Ansible inventory
+├── main.tf                    # Root configuration
+├── playbook.yaml              # Ansible playbook
+├── providers.tf               # Provider config
+├── terraform.tfvars           # Variable values
+└── variables.tf               # Root variables
 ```
 ---
 ## Prerequisites
